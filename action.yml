@@ -1,0 +1,13 @@
+name: 'kotlinx-benchmark-table'
+description: "An Action to take info from kotlinx-benchmark outputs and display them in a table as a pull request comment"
+author: 'boswelja'
+branding:
+  icon: 'bar-chart-2'
+  color: 'purple'
+inputs:
+  benchmarkResults:
+    description: "The benchmark result files"
+    required: true
+runs:
+  using: 'node12'
+  main: 'dist/index.js'

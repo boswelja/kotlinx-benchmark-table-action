@@ -1,0 +1,25 @@
+{
+  "name": "kotlinx-benchmark-table-action",
+  "version": "1.0.0",
+  "description": "An Action to take info from kotlinx-benchmark outputs and display them in a table as a pull request comment",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "ncc build src/main.js -m -o dist/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boswelja/kotlinx-benchmark-table-action.git"
+  },
+  "author": "Jack Boswell (boswelja)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/boswelja/kotlinx-benchmark-table-action/issues"
+  },
+  "homepage": "https://github.com/boswelja/kotlinx-benchmark-table-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.4.0"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.28.6"
+  }
+}
