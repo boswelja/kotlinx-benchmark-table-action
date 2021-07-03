@@ -5,9 +5,12 @@ branding:
   icon: 'bar-chart-2'
   color: 'purple'
 inputs:
-  benchmarkResults:
+  benchmark-results:
     description: "The benchmark result files"
     required: true
+outputs:
+  benchmark-table:
+    description: "The markdown-formatted table for the benchmarks"
 runs:
   using: 'node12'
   main: 'dist/index.js'
