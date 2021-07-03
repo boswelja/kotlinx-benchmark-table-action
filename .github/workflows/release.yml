@@ -1,0 +1,33 @@
+name: "Tag & Deploy Action"
+
+on:
+  workflow_dispatch:
+    inputs:
+      prerelease:
+        description: 'Whether this release is a prerelease'
+        default: 'true'
+        required: true
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2.3.4
+      with:
+        ref: ${{ github.head_ref }}   # checkout the correct branch name
+        fetch-depth: 0                # fetch the whole repo history
+    - name: Git Version
+      uses: codacy/git-version@2.5.0
+      id: version
+      with:
+        release-branch: main
+    - name: Create Release
+      uses: ncipollo/release-action@v1.8.6
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ steps.version.outputs.version }}
+        release_name: ${{ steps.version.outputs.version }}
+        prerelease: ${{ github.event.inputs.prerelease }}
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit: ${{ env.GITHUB_SHA }}
