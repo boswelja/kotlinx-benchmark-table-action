@@ -14,7 +14,7 @@ export function buildBenchmarkTable(benchmarks: Benchmark[]): string {
 
     benchmarks.forEach(function (benchmark) {
         tableString +=
-            "| " + benchmark.benchmark + " | " + formattedScoreFor(benchmark) + " | " + formattedErrorFor(benchmark) + " |"
+            "| " + benchmark.benchmark + " | " + formattedScoreFor(benchmark) + " | " + formattedErrorFor(benchmark) + " |\n"
     });
 
     return tableString;
