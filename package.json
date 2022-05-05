@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/boswelja/kotlinx-benchmark-table-action#readme",
   "dependencies": {
-    "@actions/core": "^1.7.0",
+    "@actions/core": "^1.8.0",
     "glob": "^8.0.1"
   },
   "devDependencies": {
