@@ -19,7 +19,7 @@ Check [action.yml](action.yml) for a description of inputs and outputs.
     echo '${{steps.benchmark-table.outputs.benchmark-table}}️' >> $GITHUB_STEP_SUMMARY
 ```
 
-2. As a GitHub PR comment:
+2. As a GitHub PR comment (Assuming the action is running on a GitHub runners):
 
 ```yml
 - name: Create Benchmark Table
