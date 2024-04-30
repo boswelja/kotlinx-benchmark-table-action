@@ -12,11 +12,7 @@ describe('tablebuilder', () => {
         debug("Num of benchmarks: " + benchmarks.length)
         let result = tablebuild.buildBenchmarkTable(benchmarks)
         let output = readFileSync(__dirname + '/fixtures/output.txt')
-
-        debug("Expected: \n" + output.toString())
-        debug("---")
-        debug("Result: \n" + result)
-
+        
         expect(result).toBe(output.toString())
     })
 })
