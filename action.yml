@@ -12,5 +12,5 @@ outputs:
   benchmark-table:
     description: "The markdown-formatted table for the benchmarks"
 runs:
-  using: 'node12'
+  using: 'node20'
   main: 'dist/index.js'
