@@ -12,17 +12,17 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2.3.4
+    - uses: actions/checkout@v4
       with:
         ref: ${{ github.head_ref }}   # checkout the correct branch name
         fetch-depth: 0                # fetch the whole repo history
     - name: Git Version
-      uses: codacy/git-version@2.5.0
+      uses: codacy/git-version@2.8.0
       id: version
       with:
         release-branch: main
     - name: Create Release
-      uses: ncipollo/release-action@v1.8.6
+      uses: ncipollo/release-action@v1.14.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
