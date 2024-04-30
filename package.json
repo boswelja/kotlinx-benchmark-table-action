@@ -4,8 +4,9 @@
   "description": "An Action to take info from kotlinx-benchmark outputs and display them in a table as a pull request comment",
   "main": "dist/index.js",
   "scripts": {
-    "build": "ncc build src/main.ts -m -o dist/",
-    "test": "npx jest"
+    "build": "ncc build src/index.ts -m -o dist/",
+    "test": "npx jest",
+    "all": "npm run test && npm run build"
   },
   "repository": {
     "type": "git",
