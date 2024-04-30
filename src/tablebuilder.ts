@@ -9,15 +9,13 @@ function formattedErrorFor(benchmark: Benchmark): string {
 }
 
 export function buildBenchmarkTable(benchmarks: Benchmark[]): string {
-    let tableString = `<table><tr><th>Benchmark</th><th>Score</th><th>Error</th></tr>`
+    let tableString = `| Benchmark | Score | Error |`
+    tableString += `\n`
+    tableString += `| --------- | ----- | ----- |`
+    tableString += `\n`
     benchmarks.forEach(function (benchmark) {
-        tableString += `<tr>`
-        tableString += `<td>${benchmark.benchmark}</td>`
-        tableString += `<td>${formattedScoreFor(benchmark)}</td>`
-        tableString += `<td>${formattedErrorFor(benchmark)}</td>`
-        tableString += `</tr>`
+        tableString += `| ${benchmark.benchmark} | ${formattedScoreFor(benchmark)} | ${formattedErrorFor(benchmark)} |`
+        tableString += `\n`
     })
-    tableString += `</table>`
-
-    return tableString
+    return tableString.trimEnd()
 }
