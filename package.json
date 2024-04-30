@@ -7,12 +7,6 @@
     "build": "ncc build src/main.ts -m -o dist/",
     "test": "npx jest"
   },
-  "exports": {
-    ".": "./dist/index.js"
-  },
-  "engines": {
-    "node": ">=20"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/boswelja/kotlinx-benchmark-table-action.git"
@@ -28,13 +22,13 @@
     "glob": "^10.3.12"
   },
   "devDependencies": {
+    "@jest/globals": "^29.7.0",
     "@types/glob": "^8.1.0",
-    "@vercel/ncc": "^0.38.1",
-    "typescript": "^5.4.3",
-    "jest": "^29.7.0",
     "@types/jest": "^29.5.12",
+    "@vercel/ncc": "^0.38.1",
+    "jest": "^29.7.0",
     "ts-jest": "^29.1.2",
-    "@jest/globals": "^29.7.0"
+    "typescript": "^5.4.5"
   },
   "jest": {
     "preset": "ts-jest",
@@ -46,7 +40,7 @@
       "ts"
     ],
     "testMatch": [
-      "**/*.test.ts"
+      "__tests__/**/*.test.ts"
     ],
     "testPathIgnorePatterns": [
       "/node_modules/",
