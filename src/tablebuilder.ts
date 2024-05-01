@@ -12,10 +12,9 @@ export function buildBenchmarkTable(benchmarks: Benchmark[]): string {
     let tableString = `| Benchmark | Score | Error |`
     tableString += `\n`
     tableString += `| --------- | ----- | ----- |`
-    tableString += `\n`
     benchmarks.forEach(function (benchmark) {
-        tableString += `| ${benchmark.benchmark} | ${formattedScoreFor(benchmark)} | ${formattedErrorFor(benchmark)} |`
         tableString += `\n`
+        tableString += `| ${benchmark.benchmark} | ${formattedScoreFor(benchmark)} | ${formattedErrorFor(benchmark)} |`
     })
-    return tableString.trimEnd()
+    return tableString
 }
