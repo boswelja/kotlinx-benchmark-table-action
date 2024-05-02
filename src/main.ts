@@ -1,11 +1,11 @@
-import { getInput, setOutput, setFailed, exportVariable, debug, info } from '@actions/core';
-import { glob } from "glob";
-import { mapFilesToBenchmarks } from "./benchmark";
-import { buildBenchmarkTable } from "./tablebuilder";
+import { getInput, setOutput, setFailed, exportVariable, debug, info } from '@actions/core'
+import { glob } from "glob"
+import { mapFilesToBenchmarks } from "./benchmark"
+import { buildBenchmarkTable } from "./tablebuilder"
 
-function main() {
+export function run() {
     // Get the result json path
-    var benchmarkResultPath = getInput("benchmark-results", { required: true })
+    let benchmarkResultPath = getInput("benchmark-results", { required: true })
     debug("Getting results matching path " + benchmarkResultPath)
 
     try {
@@ -18,12 +18,10 @@ function main() {
         }
 
         // Build and output the table
-        let table = buildBenchmarkTable(benchmarks);
+        let table = buildBenchmarkTable(benchmarks)
         setOutput("benchmark-table", table);
     } catch {
         setFailed("Failed to get benchmarks")
         return
     }
 }
-
-main();

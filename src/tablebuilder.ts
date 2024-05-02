@@ -1,4 +1,4 @@
-import { Benchmark } from "./benchmark";
+import { Benchmark } from "./benchmark"
 
 function formattedScoreFor(benchmark: Benchmark): string {
     return benchmark.primaryMetric.score.toFixed(3) + benchmark.primaryMetric.scoreUnit
@@ -9,13 +9,12 @@ function formattedErrorFor(benchmark: Benchmark): string {
 }
 
 export function buildBenchmarkTable(benchmarks: Benchmark[]): string {
-    var tableString = "| Benchmark | Score | Error |\n" +
-                      "| --------- | ----- | ----- |\n";
-
+    let tableString = `| Benchmark | Score | Error |`
+    tableString += `\n`
+    tableString += `| --------- | ----- | ----- |`
     benchmarks.forEach(function (benchmark) {
-        tableString +=
-            "| " + benchmark.benchmark + " | " + formattedScoreFor(benchmark) + " | " + formattedErrorFor(benchmark) + " |\n"
-    });
-
-    return tableString;
+        tableString += `\n`
+        tableString += `| ${benchmark.benchmark} | ${formattedScoreFor(benchmark)} | ${formattedErrorFor(benchmark)} |`
+    })
+    return tableString
 }

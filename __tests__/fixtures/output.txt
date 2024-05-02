@@ -1,0 +1,4 @@
+| Benchmark | Score | Error |
+| --------- | ----- | ----- |
+| com.benchmarks.MessagesBenchmark.messageInsertionBenchmark | 1.782ops/s | 0.223ops/s |
+| com.benchmarks.MessagesBenchmark.queryMessagesBenchmark | 50.457ops/s | 3.394ops/s |
